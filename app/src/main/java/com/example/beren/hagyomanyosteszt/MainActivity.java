@@ -109,6 +109,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener{
 
             case R.id.AC:
                 Display(0);
+                break;
             case R.id.memoryplussz:
                 memory += Double.parseDouble(t1.getText().toString());
                 break;
