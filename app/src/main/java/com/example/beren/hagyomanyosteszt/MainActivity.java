@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.DecimalFormat;
+
 public class MainActivity extends AppCompatActivity implements OnClickListener{
 
         TextView t1;
@@ -117,7 +119,8 @@ public class MainActivity extends AppCompatActivity implements OnClickListener{
     }
 
     public void Display(double x) {
-        t1.setText(Double.toString(x));
+        DecimalFormat df = new DecimalFormat("###,###,###,###.##########");
+        t1.setText(df.format(Double.toString(x)));
         prevResult = x;
     }
 }
