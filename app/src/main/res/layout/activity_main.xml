@@ -20,171 +20,210 @@
         android:id="@+id/szam7"
         android:layout_width="65dp"
         android:layout_height="60dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
         android:text="7"
         android:textSize="30sp"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="250dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/AC" />
 
     <Button
         android:id="@+id/szam8"
         android:layout_width="65dp"
         android:layout_height="60dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
         android:text="8"
         android:textSize="30sp"
-        tools:layout_editor_absoluteX="96dp"
-        tools:layout_editor_absoluteY="250dp" />
+        app:layout_constraintStart_toEndOf="@+id/szam7"
+        app:layout_constraintTop_toBottomOf="@+id/memoryplussz" />
 
     <Button
         android:id="@+id/szam9"
         android:layout_width="65dp"
         android:layout_height="60dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
         android:text="9"
         android:textSize="30sp"
-        tools:layout_editor_absoluteX="176dp"
-        tools:layout_editor_absoluteY="250dp" />
+        app:layout_constraintStart_toEndOf="@+id/szam8"
+        app:layout_constraintTop_toBottomOf="@+id/memoryminusz" />
 
     <Button
         android:id="@+id/szam4"
         android:layout_width="65dp"
         android:layout_height="60dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
         android:text="4"
         android:textSize="30sp"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="319dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/szam7" />
 
     <Button
         android:id="@+id/szam5"
         android:layout_width="65dp"
         android:layout_height="60dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
         android:text="5"
         android:textSize="30sp"
-        tools:layout_editor_absoluteX="96dp"
-        tools:layout_editor_absoluteY="319dp" />
+        app:layout_constraintStart_toEndOf="@+id/szam4"
+        app:layout_constraintTop_toBottomOf="@+id/szam8" />
 
     <Button
         android:id="@+id/szam6"
         android:layout_width="65dp"
         android:layout_height="60dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
         android:text="6"
         android:textSize="30sp"
-        tools:layout_editor_absoluteX="176dp"
-        tools:layout_editor_absoluteY="319dp" />
+        app:layout_constraintStart_toEndOf="@+id/szam5"
+        app:layout_constraintTop_toBottomOf="@+id/szam9" />
 
     <Button
         android:id="@+id/szam1"
         android:layout_width="65dp"
         android:layout_height="60dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
         android:text="1"
         android:textSize="30sp"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="389dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/szam4" />
 
     <Button
         android:id="@+id/szam2"
         android:layout_width="65dp"
         android:layout_height="60dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
         android:text="2"
         android:textSize="30sp"
-        tools:layout_editor_absoluteX="96dp"
-        tools:layout_editor_absoluteY="389dp" />
+        app:layout_constraintStart_toEndOf="@+id/szam1"
+        app:layout_constraintTop_toBottomOf="@+id/szam5" />
 
     <Button
         android:id="@+id/szam3"
         android:layout_width="65dp"
         android:layout_height="60dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
         android:text="3"
         android:textSize="30sp"
-        tools:layout_editor_absoluteX="176dp"
-        tools:layout_editor_absoluteY="389dp" />
+        app:layout_constraintStart_toEndOf="@+id/szam2"
+        app:layout_constraintTop_toBottomOf="@+id/szam6" />
 
     <Button
         android:id="@+id/szam0"
         android:layout_width="144dp"
         android:layout_height="60dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
         android:text="0"
         android:textSize="30sp"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="467dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/szam2" />
 
     <Button
         android:id="@+id/comma"
-        android:layout_width="60dp"
+        android:layout_width="65dp"
         android:layout_height="60dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
         android:text="."
         android:textSize="30sp"
-        tools:layout_editor_absoluteX="178dp"
-        tools:layout_editor_absoluteY="467dp" />
+        app:layout_constraintStart_toEndOf="@+id/szam0"
+        app:layout_constraintTop_toBottomOf="@+id/szam3" />
 
     <Button
         android:id="@+id/osztas"
         android:layout_width="90dp"
         android:layout_height="60dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
         android:text="/"
         android:textSize="30sp"
-        tools:layout_editor_absoluteX="254dp"
+        app:layout_constraintStart_toEndOf="@+id/memoryminusz"
         tools:layout_editor_absoluteY="177dp" />
 
     <Button
         android:id="@+id/szorzas"
         android:layout_width="90dp"
         android:layout_height="60dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
         android:text="*"
         android:textSize="30sp"
-        tools:layout_editor_absoluteX="254dp"
-        tools:layout_editor_absoluteY="250dp" />
+        app:layout_constraintStart_toEndOf="@+id/szam9"
+        app:layout_constraintTop_toBottomOf="@+id/osztas" />
 
     <Button
         android:id="@+id/minusz"
         android:layout_width="90dp"
         android:layout_height="60dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
         android:text="-"
         android:textSize="30sp"
-        tools:layout_editor_absoluteX="254dp"
-        tools:layout_editor_absoluteY="319dp" />
+        app:layout_constraintStart_toEndOf="@+id/szam6"
+        app:layout_constraintTop_toBottomOf="@+id/szorzas" />
 
     <Button
         android:id="@+id/plussz"
         android:layout_width="90dp"
         android:layout_height="60dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
         android:text="+"
         android:textSize="30sp"
-        tools:layout_editor_absoluteX="254dp"
-        tools:layout_editor_absoluteY="389dp" />
+        app:layout_constraintStart_toEndOf="@+id/szam3"
+        app:layout_constraintTop_toBottomOf="@+id/minusz" />
 
     <Button
         android:id="@+id/egyenlo"
         android:layout_width="90dp"
         android:layout_height="60dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
         android:text="="
         android:textSize="30sp"
-        tools:layout_editor_absoluteX="254dp"
-        tools:layout_editor_absoluteY="467dp" />
+        app:layout_constraintStart_toEndOf="@+id/comma"
+        app:layout_constraintTop_toBottomOf="@+id/plussz" />
 
     <Button
         android:id="@+id/AC"
-        android:layout_width="60dp"
+        android:layout_width="65dp"
         android:layout_height="60dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
         android:text="AC"
         android:textSize="25sp"
-        tools:layout_editor_absoluteX="16dp"
+        app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="177dp" />
 
     <Button
         android:id="@+id/memoryplussz"
-        android:layout_width="60dp"
+        android:layout_width="65dp"
         android:layout_height="60dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
         android:text="M+"
         android:textSize="25sp"
-        tools:layout_editor_absoluteX="96dp"
+        app:layout_constraintStart_toEndOf="@+id/AC"
         tools:layout_editor_absoluteY="177dp" />
 
     <Button
         android:id="@+id/memoryminusz"
-        android:layout_width="60dp"
+        android:layout_width="65dp"
         android:layout_height="60dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
         android:text="M-"
         android:textSize="25sp"
-        tools:layout_editor_absoluteX="176dp"
+        app:layout_constraintStart_toEndOf="@+id/memoryplussz"
         tools:layout_editor_absoluteY="177dp" />
 
 </android.support.constraint.ConstraintLayout>
