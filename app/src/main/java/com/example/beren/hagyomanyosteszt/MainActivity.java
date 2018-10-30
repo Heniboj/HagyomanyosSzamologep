@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener{
         Button b1,b2,b3,b4,b5,b6,b7,b8,b9,b0,bplussz,bminusz,bszorzas,bosztas,begyenlo,bmemoryplussz,bmemoryminusz,bAC,comma;
 
         double memory, prevResult;
+        boolean justOutputted = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,9 +91,15 @@ public class MainActivity extends AppCompatActivity implements OnClickListener{
             case R.id.szam9:
             case R.id.szam0:
 
-            case R.id.egyenlo:
+
             case R.id.comma:
-                t1.setText(t1.getText() + button.getText().toString());
+                if (justOutputted)
+                    t1.setText(button.getText().toString());
+                else {
+                    t1.setText(t1.getText() + button.getText().toString());
+                    justOutputted = false;
+                }
+
                 break;
 
             case R.id.plussz:
@@ -104,8 +111,12 @@ public class MainActivity extends AppCompatActivity implements OnClickListener{
             case R.id.szorzas:
                 Display(prevResult * Double.parseDouble(t1.getText().toString()));
                 break;
-            case R.id.osztas:Display(prevResult / Double.parseDouble(t1.getText().toString()));
+            case R.id.osztas:
+                Display(prevResult / Double.parseDouble(t1.getText().toString()));
                 break;
+
+            case R.id.egyenlo:
+
 
             case R.id.AC:
                 Display(0);
@@ -120,8 +131,15 @@ public class MainActivity extends AppCompatActivity implements OnClickListener{
     }
 
     public void Display(double x) {
+
+        justOutputted = true;
         DecimalFormat df = new DecimalFormat("###,###,###,###.##########");
-        t1.setText(df.format(Double.toString(x)));
+        try {
+            t1.setText(df.format(x));
+        }
+        catch (Exception e) {
+            Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
+        }
         prevResult = x;
     }
 }
