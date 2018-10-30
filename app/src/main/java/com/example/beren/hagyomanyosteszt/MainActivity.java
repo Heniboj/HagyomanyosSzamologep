@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener{
         TextView t1;
         Button b1,b2,b3,b4,b5,b6,b7,b8,b9,b0,bplussz,bminusz,bszorzas,bosztas,begyenlo,bmemoryplussz,bmemoryminusz,bAC,comma;
 
-        double memory;
+        double memory, prevResult;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,17 +87,26 @@ public class MainActivity extends AppCompatActivity implements OnClickListener{
             case R.id.szam8:
             case R.id.szam9:
             case R.id.szam0:
-            case R.id.plussz:
-            case R.id.minusz:
-            case R.id.szorzas:
-            case R.id.osztas:
+
             case R.id.egyenlo:
             case R.id.comma:
                 t1.setText(t1.getText() + button.getText().toString());
                 break;
 
+            case R.id.plussz:
+                Display(prevResult + Double.parseDouble(t1.getText().toString()));
+                break;
+            case R.id.minusz:
+                Display(prevResult - Double.parseDouble(t1.getText().toString()));
+                break;
+            case R.id.szorzas:
+                Display(prevResult * Double.parseDouble(t1.getText().toString()));
+                break;
+            case R.id.osztas:Display(prevResult / Double.parseDouble(t1.getText().toString()));
+                break;
+
             case R.id.AC:
-                t1.setText("");
+                Display(0);
             case R.id.memoryplussz:
                 memory += Double.parseDouble(t1.getText().toString());
                 break;
@@ -105,5 +114,10 @@ public class MainActivity extends AppCompatActivity implements OnClickListener{
                 memory -= Double.parseDouble(t1.getText().toString());
                 break;
         }
+    }
+
+    public void Display(double x) {
+        t1.setText(Double.toString(x));
+        prevResult = x;
     }
 }
