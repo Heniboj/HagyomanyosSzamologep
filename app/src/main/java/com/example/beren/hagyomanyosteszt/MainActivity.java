@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener{
 
         double memory, prevResult;
         boolean justOutputted = true;
+        Operations prevOp = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -100,23 +101,45 @@ public class MainActivity extends AppCompatActivity implements OnClickListener{
             break;
 
             case R.id.plussz:
-                Display(prevResult + Double.parseDouble(t1.getText().toString()));
+                prevOp = Operations.Addition;
+                Display(prevResult + Double.parseDouble(t1.getText().toString()), false);
                 break;
             case R.id.minusz:
-                Display(prevResult - Double.parseDouble(t1.getText().toString()));
+                prevOp = Operations.Subtraction;
+                Display(prevResult - Double.parseDouble(t1.getText().toString()), false);
                 break;
             case R.id.szorzas:
-                Display(prevResult * Double.parseDouble(t1.getText().toString()));
+                prevOp = Operations.Multiplication;
+                Display(prevResult * Double.parseDouble(t1.getText().toString()), false);
                 break;
             case R.id.osztas:
-                Display(prevResult / Double.parseDouble(t1.getText().toString()));
+                prevOp = Operations.Division;
+                Display(prevResult / Double.parseDouble(t1.getText().toString()), false);
                 break;
 
             case R.id.egyenlo:
 
+                switch(prevOp) {
+                    case Addition:
+                        Display(prevResult + Double.parseDouble(t1.getText().toString()), true);
+                        break;
+
+                    case Subtraction:
+                        Display(prevResult - Double.parseDouble(t1.getText().toString()), true);
+                        break;
+
+                    case Multiplication:
+                        Display(prevResult * Double.parseDouble(t1.getText().toString()), true);
+                        break;
+
+                    case Division:
+                        Display(prevResult / Double.parseDouble(t1.getText().toString()), true);
+                        break;
+                }
+                break;
 
             case R.id.AC:
-                Display(0);
+                Display(0, false);
                 break;
             case R.id.memoryplussz:
                 memory += Double.parseDouble(t1.getText().toString());
@@ -127,11 +150,16 @@ public class MainActivity extends AppCompatActivity implements OnClickListener{
         }
     }
 
-    public void Display(double x) {
+    public void Display(double x, boolean egyenlo) {
 
         justOutputted = true;
         DecimalFormat df = new DecimalFormat("###,###,###,###.##########");
         t1.setText(df.format(x));
-        prevResult = x;
+        if (!egyenlo)
+            prevResult = x;
     }
+}
+
+enum Operations {
+    Addition, Subtraction, Multiplication, Division
 }
