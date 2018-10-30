@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener{
         double memory, prevResult;
         boolean justOutputted = true;
         Operations prevOp = null;
+        boolean alreadyformatted = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -153,11 +154,21 @@ public class MainActivity extends AppCompatActivity implements OnClickListener{
     public void Display(double x, boolean egyenlo) {
 
         justOutputted = true;
+        if(alreadyformatted==false){
         DecimalFormat df = new DecimalFormat("###,###,###,###.##########");
-        t1.setText(df.format(x));
-        if (!egyenlo)
+        t1.setText(df.format(x));}
+        else{t1.setText(Double.toString(x));}
+        if (!egyenlo) {
             prevResult = x;
+
+        }
+
+
+        alreadyformatted=true;
     }
+
+
+
 }
 
 enum Operations {
