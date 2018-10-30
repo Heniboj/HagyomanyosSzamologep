@@ -90,17 +90,14 @@ public class MainActivity extends AppCompatActivity implements OnClickListener{
             case R.id.szam8:
             case R.id.szam9:
             case R.id.szam0:
-
-
             case R.id.comma:
-                if (justOutputted)
+                if (justOutputted) {
                     t1.setText(button.getText().toString());
-                else {
-                    t1.setText(t1.getText() + button.getText().toString());
                     justOutputted = false;
                 }
-
-                break;
+                else
+                    t1.setText(t1.getText() + button.getText().toString());
+            break;
 
             case R.id.plussz:
                 Display(prevResult + Double.parseDouble(t1.getText().toString()));
@@ -134,12 +131,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener{
 
         justOutputted = true;
         DecimalFormat df = new DecimalFormat("###,###,###,###.##########");
-        try {
-            t1.setText(df.format(x));
-        }
-        catch (Exception e) {
-            Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
-        }
+        t1.setText(df.format(x));
         prevResult = x;
     }
 }
