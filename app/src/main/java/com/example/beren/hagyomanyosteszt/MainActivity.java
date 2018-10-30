@@ -11,7 +11,8 @@ import android.widget.Toast;
 
 import java.text.DecimalFormat;
 
-public class MainActivity extends AppCompatActivity implements OnClickListener{
+public class MainActivity extends AppCompatActivity implements OnClickListener
+{
 
         TextView t1;
         Button b1,b2,b3,b4,b5,b6,b7,b8,b9,b0,bplussz,bminusz,bszorzas,bosztas,begyenlo,bmemoryplussz,bmemoryminusz,bAC,comma;
@@ -21,7 +22,8 @@ public class MainActivity extends AppCompatActivity implements OnClickListener{
         Operations prevOp = null;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -73,7 +75,8 @@ public class MainActivity extends AppCompatActivity implements OnClickListener{
         comma.setOnClickListener(this);
     }
 
-    public void onClick(View v){
+    public void onClick(View v)
+    {
 
         Button button = (Button) v;
 
@@ -92,7 +95,8 @@ public class MainActivity extends AppCompatActivity implements OnClickListener{
             case R.id.szam9:
             case R.id.szam0:
             case R.id.comma:
-                if (justOutputted) {
+                if (justOutputted)
+                {
                     t1.setText(button.getText().toString());
                     justOutputted = false;
                 }
@@ -119,7 +123,8 @@ public class MainActivity extends AppCompatActivity implements OnClickListener{
 
             case R.id.egyenlo:
 
-                switch(prevOp) {
+                switch(prevOp)
+                {
                     case Addition:
                         Display(prevResult + Double.parseDouble(t1.getText().toString()), true);
                         break;
@@ -150,8 +155,8 @@ public class MainActivity extends AppCompatActivity implements OnClickListener{
         }
     }
 
-    public void Display(double x, boolean egyenlo) {
-
+    public void Display(double x, boolean egyenlo)
+    {
         justOutputted = true;
         DecimalFormat df = new DecimalFormat("###,###,###,###.##########");
         t1.setText(df.format(x));
@@ -160,6 +165,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener{
     }
 }
 
-enum Operations {
+enum Operations
+{
     Addition, Subtraction, Multiplication, Division
 }
