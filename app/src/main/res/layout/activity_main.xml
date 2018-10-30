@@ -107,10 +107,10 @@
         tools:layout_editor_absoluteY="467dp" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/comma"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:text=","
+        android:text="."
         android:textSize="30sp"
         tools:layout_editor_absoluteX="178dp"
         tools:layout_editor_absoluteY="467dp" />
