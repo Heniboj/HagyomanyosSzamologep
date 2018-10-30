@@ -14,6 +14,8 @@ public class MainActivity extends AppCompatActivity implements OnClickListener{
         TextView t1;
         Button b1,b2,b3,b4,b5,b6,b7,b8,b9,b0,bplussz,bminusz,bszorzas,bosztas,begyenlo,bmemoryplussz,bmemoryminusz,bAC,comma;
 
+        double memory;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -90,11 +92,17 @@ public class MainActivity extends AppCompatActivity implements OnClickListener{
             case R.id.szorzas:
             case R.id.osztas:
             case R.id.egyenlo:
-            case R.id.memoryplussz:
-            case R.id.memoryminusz:
-            case R.id.AC:
             case R.id.comma:
                 t1.setText(t1.getText() + button.getText().toString());
+                break;
+
+            case R.id.AC:
+                t1.setText("");
+            case R.id.memoryplussz:
+                memory += Double.parseDouble(t1.getText().toString());
+                break;
+            case R.id.memoryminusz:
+                memory -= Double.parseDouble(t1.getText().toString());
                 break;
         }
     }
