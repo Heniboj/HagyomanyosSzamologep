@@ -97,4 +97,94 @@
         tools:layout_editor_absoluteX="176dp"
         tools:layout_editor_absoluteY="389dp" />
 
+    <Button
+        android:id="@+id/szam0"
+        android:layout_width="144dp"
+        android:layout_height="60dp"
+        android:text="0"
+        android:textSize="30sp"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="467dp" />
+
+    <Button
+        android:id="@+id/comma"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:text="."
+        android:textSize="30sp"
+        tools:layout_editor_absoluteX="178dp"
+        tools:layout_editor_absoluteY="467dp" />
+
+    <Button
+        android:id="@+id/osztas"
+        android:layout_width="90dp"
+        android:layout_height="60dp"
+        android:text="/"
+        android:textSize="30sp"
+        tools:layout_editor_absoluteX="254dp"
+        tools:layout_editor_absoluteY="177dp" />
+
+    <Button
+        android:id="@+id/szorzas"
+        android:layout_width="90dp"
+        android:layout_height="60dp"
+        android:text="*"
+        android:textSize="30sp"
+        tools:layout_editor_absoluteX="254dp"
+        tools:layout_editor_absoluteY="250dp" />
+
+    <Button
+        android:id="@+id/minusz"
+        android:layout_width="90dp"
+        android:layout_height="60dp"
+        android:text="-"
+        android:textSize="30sp"
+        tools:layout_editor_absoluteX="254dp"
+        tools:layout_editor_absoluteY="319dp" />
+
+    <Button
+        android:id="@+id/plussz"
+        android:layout_width="90dp"
+        android:layout_height="60dp"
+        android:text="+"
+        android:textSize="30sp"
+        tools:layout_editor_absoluteX="254dp"
+        tools:layout_editor_absoluteY="389dp" />
+
+    <Button
+        android:id="@+id/egyenlo"
+        android:layout_width="90dp"
+        android:layout_height="60dp"
+        android:text="="
+        android:textSize="30sp"
+        tools:layout_editor_absoluteX="254dp"
+        tools:layout_editor_absoluteY="467dp" />
+
+    <Button
+        android:id="@+id/AC"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:text="AC"
+        android:textSize="25sp"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="177dp" />
+
+    <Button
+        android:id="@+id/memoryplussz"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:text="M+"
+        android:textSize="25sp"
+        tools:layout_editor_absoluteX="96dp"
+        tools:layout_editor_absoluteY="177dp" />
+
+    <Button
+        android:id="@+id/memoryminusz"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:text="M-"
+        android:textSize="25sp"
+        tools:layout_editor_absoluteX="176dp"
+        tools:layout_editor_absoluteY="177dp" />
+
 </android.support.constraint.ConstraintLayout>
