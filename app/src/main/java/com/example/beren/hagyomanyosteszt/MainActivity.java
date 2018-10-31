@@ -17,9 +17,9 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
 {
 
         TextView t1;
-        Button b1,b2,b3,b4,b5,b6,b7,b8,b9,b0,bplussz,bminusz,bszorzas,bosztas,begyenlo,bmemoryplussz,bmemoryminusz,bAC,comma;
+        Button b1,b2,b3,b4,b5,b6,b7,b8,b9,b0,bplussz,bminusz,bszorzas,bosztas,begyenlo,bmemoryplussz,bmemoryminusz,bAC,comma,bmemorycall,bmemoryclear;
 
-        double memory, prevInput, prevResult;
+        double memory, prevInput, prevResult,recall;
         boolean justOutputted = true;
         Operations prevOp = null;
 
@@ -53,6 +53,8 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
 
         bmemoryplussz = findViewById(R.id.memoryplussz);
         bmemoryminusz = findViewById(R.id.memoryminusz);
+        bmemorycall = findViewById(R.id.memorycall);
+        bmemoryclear = findViewById(R.id.memoryclear);
 
         bAC = findViewById(R.id.AC);
 
@@ -73,6 +75,8 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
         begyenlo.setOnClickListener(this);
         bmemoryplussz.setOnClickListener(this);
         bmemoryminusz.setOnClickListener(this);
+        bmemorycall.setOnClickListener(this);
+        bmemoryclear.setOnClickListener(this);
         bAC.setOnClickListener(this);
         comma.setOnClickListener(this);
     }
@@ -161,6 +165,10 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
                         case Division:
                             Display(prevResult / Input());
                             break;
+                        case Memorycall:
+                            Display(recall);
+                            break;
+
                     }
                     break;
                 }
@@ -179,6 +187,32 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
                 break;
             case R.id.memoryminusz:
                 memory -= Input();
+                break;
+
+            case R.id.memoryclear:
+                memory=0;
+                break;
+
+       case R.id.memorycall:
+
+           switch(prevOp){ case Addition:
+                recall=prevResult+memory;
+                break;
+
+            case Subtraction:
+                recall=prevResult-memory;
+                break;
+
+            case Multiplication:
+                recall=prevResult*memory;
+                break;
+
+            case Division:
+                recall=prevResult/memory;
+                break;
+
+           }
+                prevOp=Operations.Memorycall;
                 break;
         }
 
@@ -211,5 +245,5 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
 
 enum Operations
 {
-    Addition, Subtraction, Multiplication, Division
+    Addition, Subtraction, Multiplication, Division, Memorycall
 }
