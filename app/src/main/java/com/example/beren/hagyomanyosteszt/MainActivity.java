@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
 
         int proba = v.getId();
 
-        switch(proba){
+        switch(proba) {
 
             case R.id.szam1:
             case R.id.szam2:
@@ -96,14 +96,12 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
             case R.id.szam9:
             case R.id.szam0:
             case R.id.comma:
-                if (justOutputted)
-                {
+                if (justOutputted) {
                     t1.setText(button.getText().toString());
                     justOutputted = false;
-                }
-                else
+                } else
                     t1.setText(t1.getText() + button.getText().toString());
-            break;
+                break;
 
             case R.id.plussz:
                 prevOp = Operations.Addition;
@@ -124,8 +122,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
 
             case R.id.egyenlo:
 
-                switch(prevOp)
-                {
+                switch (prevOp) {
                     case Addition:
                         Display(prevResult + Double.parseDouble(t1.getText().toString()), true);
                         break;
@@ -168,12 +165,8 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
 
         }
 
-
         alreadyformatted=true;
     }
-
-
-
 }
 
 enum Operations
