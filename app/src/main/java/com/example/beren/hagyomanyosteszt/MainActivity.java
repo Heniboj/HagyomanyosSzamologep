@@ -1,8 +1,10 @@
 package com.example.beren.hagyomanyosteszt;
 
+import android.service.autofill.RegexValidator;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.ButtonBarLayout;
+import android.util.Log;
 import android.view.View.OnClickListener;
 import android.view.View;
 import android.widget.Button;
@@ -17,10 +19,9 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
         TextView t1;
         Button b1,b2,b3,b4,b5,b6,b7,b8,b9,b0,bplussz,bminusz,bszorzas,bosztas,begyenlo,bmemoryplussz,bmemoryminusz,bAC,comma;
 
-        double memory, prevResult;
+        double memory, prevInput, prevResult;
         boolean justOutputted = true;
         Operations prevOp = null;
-        boolean alreadyformatted = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -78,12 +79,24 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
 
     public void onClick(View v)
     {
-
         Button button = (Button) v;
 
-        int proba = v.getId();
+        int buttonId = button.getId();
 
-        switch(proba) {
+        String input = t1.getText().toString();
+
+        switch(buttonId){
+            case R.id.szam0:
+                if (input.equals("0"))
+                    break;
+
+            case R.id.comma:
+
+                if (input.contains(".")) {
+                    StringBuilder sb = new StringBuilder(input);
+                    sb.deleteCharAt(input.indexOf("."));
+                    t1.setText(sb.toString());
+                }
 
             case R.id.szam1:
             case R.id.szam2:
@@ -94,78 +107,105 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
             case R.id.szam7:
             case R.id.szam8:
             case R.id.szam9:
-            case R.id.szam0:
-            case R.id.comma:
-                if (justOutputted) {
+
+
+                if (justOutputted && buttonId != R.id.comma)
+                {
                     t1.setText(button.getText().toString());
                     justOutputted = false;
-                } else
+                }
+                else {
                     t1.setText(t1.getText() + button.getText().toString());
-                break;
+                    justOutputted = false;
+                }
+
+            break;
 
             case R.id.plussz:
                 prevOp = Operations.Addition;
-                Display(prevResult + Double.parseDouble(t1.getText().toString()), false);
+                if (!justOutputted)
+                    Display(prevResult + Input());
                 break;
             case R.id.minusz:
                 prevOp = Operations.Subtraction;
-                Display(prevResult - Double.parseDouble(t1.getText().toString()), false);
+                if (!justOutputted)
+                    Display(prevResult - Input());
                 break;
             case R.id.szorzas:
                 prevOp = Operations.Multiplication;
-                Display(prevResult * Double.parseDouble(t1.getText().toString()), false);
+                if (!justOutputted)
+                    Display(prevResult * Input());
                 break;
             case R.id.osztas:
                 prevOp = Operations.Division;
-                Display(prevResult / Double.parseDouble(t1.getText().toString()), false);
+                if (!justOutputted)
+                    Display(prevResult / Input());
                 break;
 
             case R.id.egyenlo:
 
-                switch (prevOp) {
-                    case Addition:
-                        Display(prevResult + Double.parseDouble(t1.getText().toString()), true);
-                        break;
+                if (prevOp != null) {
+                    switch (prevOp) {
+                        case Addition:
+                            Display(prevResult + Input());
+                            break;
 
-                    case Subtraction:
-                        Display(prevResult - Double.parseDouble(t1.getText().toString()), true);
-                        break;
+                        case Subtraction:
+                            Display(prevResult - Input());
+                            break;
 
-                    case Multiplication:
-                        Display(prevResult * Double.parseDouble(t1.getText().toString()), true);
-                        break;
+                        case Multiplication:
+                            Display(prevResult * Input());
+                            break;
 
-                    case Division:
-                        Display(prevResult / Double.parseDouble(t1.getText().toString()), true);
-                        break;
+                        case Division:
+                            Display(prevResult / Input());
+                            break;
+                    }
+                    break;
                 }
+                else
+                    Display(Input());
                 break;
 
             case R.id.AC:
-                Display(0, false);
+                Display(0);
+                prevInput = 0;
+                prevOp = null;
+                prevResult = 0;
                 break;
             case R.id.memoryplussz:
-                memory += Double.parseDouble(t1.getText().toString());
+                memory += Input();
                 break;
             case R.id.memoryminusz:
-                memory -= Double.parseDouble(t1.getText().toString());
+                memory -= Input();
                 break;
         }
+
     }
 
-    public void Display(double x, boolean egyenlo)
+    private void Display(double x)
     {
         justOutputted = true;
-        if(alreadyformatted==false){
-        DecimalFormat df = new DecimalFormat("###,###,###,###.##########");
-        t1.setText(df.format(x));}
-        else{t1.setText(Double.toString(x));}
-        if (!egyenlo) {
-            prevResult = x;
+        DecimalFormat df = new DecimalFormat("###,###,###,###.###############");
+        t1.setText(df.format(x));
+        prevResult = x;
+    }
 
-        }
+    private double Input() {
+            String input = t1.getText().toString();
+            input = input.replaceAll("[^0-9.]", "");
+            if (input.startsWith(".")) {
+                input = input.replace(".", "0.");
+            }
+            else if (input.endsWith(".")) {
+                input = input.replace(".", "");
+            }
 
-        alreadyformatted=true;
+            if (!justOutputted) {
+                prevInput = Double.parseDouble(input);
+            }
+            return prevInput;
     }
 }
 
