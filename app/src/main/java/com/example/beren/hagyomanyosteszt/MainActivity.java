@@ -1,21 +1,15 @@
 package com.example.beren.hagyomanyosteszt;
 
-import android.service.autofill.RegexValidator;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.ButtonBarLayout;
-import android.util.Log;
 import android.view.View.OnClickListener;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
-
 import java.text.DecimalFormat;
 
 public class MainActivity extends AppCompatActivity implements OnClickListener
 {
-
         TextView t1;
         Button b1,b2,b3,b4,b5,b6,b7,b8,b9,b0,bplussz,bminusz,bszorzas,bosztas,begyenlo,bmemoryplussz,bmemoryminusz,bAC,comma;
 
@@ -40,21 +34,19 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
         b9 = findViewById(R.id.szam9);
         b0 = findViewById(R.id.szam0);
 
-        comma = findViewById(R.id.comma);
-
-        t1 = findViewById(R.id.kijelzo1);
-
         bplussz = findViewById(R.id.plussz);
         bminusz = findViewById(R.id.minusz);
         bszorzas = findViewById(R.id.szorzas);
         bosztas = findViewById(R.id.osztas);
-
         begyenlo = findViewById(R.id.egyenlo);
 
         bmemoryplussz = findViewById(R.id.memoryplussz);
         bmemoryminusz = findViewById(R.id.memoryminusz);
 
         bAC = findViewById(R.id.AC);
+        comma = findViewById(R.id.comma);
+
+        t1 = findViewById(R.id.kijelzo1);
 
         b1.setOnClickListener(this);
         b2.setOnClickListener(this);
@@ -66,13 +58,16 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
         b8.setOnClickListener(this);
         b9.setOnClickListener(this);
         b0.setOnClickListener(this);
+
         bplussz.setOnClickListener(this);
         bminusz.setOnClickListener(this);
         bszorzas.setOnClickListener(this);
         bosztas.setOnClickListener(this);
         begyenlo.setOnClickListener(this);
+
         bmemoryplussz.setOnClickListener(this);
         bmemoryminusz.setOnClickListener(this);
+
         bAC.setOnClickListener(this);
         comma.setOnClickListener(this);
     }
@@ -80,19 +75,19 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
     public void onClick(View v)
     {
         Button button = (Button) v;
-
         int buttonId = button.getId();
-
         String input = t1.getText().toString();
 
-        switch(buttonId){
+        switch(buttonId)
+        {
             case R.id.szam0:
                 if (input.equals("0"))
                     break;
 
             case R.id.comma:
 
-                if (input.contains(".")) {
+                if (input.contains("."))
+                {
                     StringBuilder sb = new StringBuilder(input);
                     sb.deleteCharAt(input.indexOf("."));
                     t1.setText(sb.toString());
@@ -108,13 +103,13 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
             case R.id.szam8:
             case R.id.szam9:
 
-
                 if (justOutputted && buttonId != R.id.comma)
                 {
                     t1.setText(button.getText().toString());
                     justOutputted = false;
                 }
-                else {
+                else
+                {
                     t1.setText(t1.getText() + button.getText().toString());
                     justOutputted = false;
                 }
@@ -144,8 +139,10 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
 
             case R.id.egyenlo:
 
-                if (prevOp != null) {
-                    switch (prevOp) {
+                if (prevOp != null)
+                {
+                    switch (prevOp)
+                    {
                         case Addition:
                             Display(prevResult + Input());
                             break;
@@ -192,17 +189,21 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
         prevResult = x;
     }
 
-    private double Input() {
+    private double Input()
+    {
             String input = t1.getText().toString();
+            //TODO majd magyarazd mar el mi a regex pls Koszi ;)
             input = input.replaceAll("[^0-9.]", "");
-            if (input.startsWith(".")) {
+            if (input.startsWith("."))
+            {
                 input = input.replace(".", "0.");
             }
-            else if (input.endsWith(".")) {
+            else if (input.endsWith("."))
+            {
                 input = input.replace(".", "");
             }
-
-            if (!justOutputted) {
+            if (!justOutputted)
+            {
                 prevInput = Double.parseDouble(input);
             }
             return prevInput;
