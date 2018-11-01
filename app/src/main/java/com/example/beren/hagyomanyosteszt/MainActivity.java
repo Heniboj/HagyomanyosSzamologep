@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
 
         double memory, prevInput, prevResult,recall;
         boolean justOutputted = true;
-        Operations prevOp = null;
+        Operations prevOp=Operations.AC;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -179,7 +179,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
             case R.id.AC:
                 Display(0);
                 prevInput = 0;
-                prevOp = null;
+                prevOp = Operations.AC;
                 prevResult = 0;
                 break;
             case R.id.memoryplussz:
@@ -210,6 +210,10 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
             case Division:
                 recall=prevResult/memory;
                 break;
+
+               default:
+                   t1.setText(Double.toString(memory));
+                   break;
 
            }
                 prevOp=Operations.Memorycall;
@@ -245,5 +249,5 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
 
 enum Operations
 {
-    Addition, Subtraction, Multiplication, Division, Memorycall
+    Addition, Subtraction, Multiplication, Division, Memorycall, AC
 }
