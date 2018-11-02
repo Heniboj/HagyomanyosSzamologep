@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.security.DomainCombiner;
 import java.text.DecimalFormat;
 
 public class MainActivity extends AppCompatActivity implements OnClickListener
@@ -21,6 +22,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
 
         double memory, prevInput, prevResult;
         boolean justOutputted = true;
+        boolean firstInput = true;
         Operations prevOp = null;
 
     @Override
@@ -108,7 +110,6 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
             case R.id.szam8:
             case R.id.szam9:
 
-
                 if (justOutputted && buttonId != R.id.comma)
                 {
                     t1.setText(button.getText().toString());
@@ -122,57 +123,29 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
             break;
 
             case R.id.plussz:
-                prevOp = Operations.Addition;
-                if (!justOutputted)
-                    Display(prevResult + Input());
+                DoMath(Operations.Addition);
                 break;
             case R.id.minusz:
-                prevOp = Operations.Subtraction;
-                if (!justOutputted)
-                    Display(prevResult - Input());
+                DoMath(Operations.Subtraction);
                 break;
             case R.id.szorzas:
-                prevOp = Operations.Multiplication;
-                if (!justOutputted)
-                    Display(prevResult * Input());
+                DoMath(Operations.Multiplication);
                 break;
             case R.id.osztas:
-                prevOp = Operations.Division;
-                if (!justOutputted)
-                    Display(prevResult / Input());
+                DoMath(Operations.Division);
                 break;
 
             case R.id.egyenlo:
-
                 if (prevOp != null) {
-                    switch (prevOp) {
-                        case Addition:
-                            Display(prevResult + Input());
-                            break;
 
-                        case Subtraction:
-                            Display(prevResult - Input());
-                            break;
-
-                        case Multiplication:
-                            Display(prevResult * Input());
-                            break;
-
-                        case Division:
-                            Display(prevResult / Input());
-                            break;
-                    }
-                    break;
+                    DoMath(Operations.Equal);
                 }
                 else
                     Display(Input());
                 break;
 
             case R.id.AC:
-                Display(0);
-                prevInput = 0;
-                prevOp = null;
-                prevResult = 0;
+                ResetCalculator();
                 break;
             case R.id.memoryplussz:
                 memory += Input();
@@ -182,6 +155,14 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
                 break;
         }
 
+    }
+
+    private void ResetCalculator() {
+        Display(0);
+        firstInput = true;
+        prevInput = 0;
+        prevOp = null;
+        prevResult = 0;
     }
 
     private void Display(double x)
@@ -207,9 +188,47 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
             }
             return prevInput;
     }
+
+    private void DoMath(Operations op) {
+
+            double input = Input();
+            if (prevOp == null) {
+                prevOp = op;
+                if (!justOutputted)
+                    Display(input);
+                else
+                    Display(prevResult);
+                return;
+            }
+
+                switch (prevOp) {
+                    case Addition:
+                        Display(prevResult + input);
+                        break;
+
+                    case Subtraction:
+                        Display(prevResult - input);
+                        break;
+
+                    case Multiplication:
+                        Display(prevResult * input);
+                        break;
+
+                    case Division:
+                        if (input == 0) {
+                            Toast.makeText(getApplicationContext(), "Nullával nem lehet osztani.", Toast.LENGTH_SHORT).show();
+                            ResetCalculator();
+                            return;
+                        }
+                        Display(prevResult / input);
+                        break;
+
+                }
+                prevOp = op;
+    }
 }
 
 enum Operations
 {
-    Addition, Subtraction, Multiplication, Division
+    Addition, Subtraction, Multiplication, Division, Equal
 }
