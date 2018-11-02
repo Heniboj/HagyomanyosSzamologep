@@ -178,7 +178,6 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
                 memory -= Input();
                 break;
         }
-
     }
 
     private void Display(double x)
