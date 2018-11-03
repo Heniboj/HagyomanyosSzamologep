@@ -26,7 +26,8 @@
             android:paddingRight="20dp"
             android:paddingBottom="5dp"
             android:text="0"
-            android:textColor="@android:color/background_light"
+
+            android:textColor="#32a703"
             android:textSize="35sp"
             app:layout_constraintHorizontal_bias="0.352"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -41,7 +42,7 @@
             android:layout_marginTop="8dp"
             android:background="@drawable/number_gradient"
             android:text="7"
-            android:textColor="@android:color/background_light"
+
             android:textSize="30sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/AC" />
@@ -54,7 +55,7 @@
             android:layout_marginTop="8dp"
             android:background="@drawable/number_gradient"
             android:text="8"
-            android:textColor="@android:color/background_light"
+
             android:textSize="30sp"
             app:layout_constraintStart_toEndOf="@+id/szam7"
             app:layout_constraintTop_toBottomOf="@+id/memoryplussz" />
@@ -67,7 +68,7 @@
             android:layout_marginTop="8dp"
             android:background="@drawable/number_gradient"
             android:text="9"
-            android:textColor="@android:color/background_light"
+
             android:textSize="30sp"
             app:layout_constraintStart_toEndOf="@+id/szam8"
             app:layout_constraintTop_toBottomOf="@+id/memoryminusz" />
@@ -80,7 +81,7 @@
             android:layout_marginTop="8dp"
             android:background="@drawable/number_gradient"
             android:text="4"
-            android:textColor="@android:color/background_light"
+
             android:textSize="30sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/szam7" />
@@ -93,7 +94,7 @@
             android:layout_marginTop="8dp"
             android:background="@drawable/number_gradient"
             android:text="5"
-            android:textColor="@android:color/background_light"
+
             android:textSize="30sp"
             app:layout_constraintStart_toEndOf="@+id/szam4"
             app:layout_constraintTop_toBottomOf="@+id/szam8" />
@@ -106,7 +107,7 @@
             android:layout_marginTop="8dp"
             android:background="@drawable/number_gradient"
             android:text="6"
-            android:textColor="@android:color/background_light"
+
             android:textSize="30sp"
             app:layout_constraintStart_toEndOf="@+id/szam5"
             app:layout_constraintTop_toBottomOf="@+id/szam9" />
@@ -119,7 +120,7 @@
             android:layout_marginTop="8dp"
             android:background="@drawable/number_gradient"
             android:text="1"
-            android:textColor="@android:color/background_light"
+
             android:textSize="30sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/szam4" />
@@ -132,7 +133,7 @@
             android:layout_marginTop="8dp"
             android:background="@drawable/number_gradient"
             android:text="2"
-            android:textColor="@android:color/background_light"
+
             android:textSize="30sp"
             app:layout_constraintStart_toEndOf="@+id/szam1"
             app:layout_constraintTop_toBottomOf="@+id/szam5" />
@@ -145,7 +146,7 @@
             android:layout_marginTop="8dp"
             android:background="@drawable/number_gradient"
             android:text="3"
-            android:textColor="@android:color/background_light"
+
             android:textSize="30sp"
             app:layout_constraintStart_toEndOf="@+id/szam2"
             app:layout_constraintTop_toBottomOf="@+id/szam6" />
@@ -158,7 +159,7 @@
             android:layout_marginTop="8dp"
             android:background="@drawable/number_gradient"
             android:text="0"
-            android:textColor="@android:color/background_light"
+
             android:textSize="30sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/szam2" />
@@ -171,7 +172,7 @@
             android:layout_marginTop="8dp"
             android:background="@drawable/number_gradient"
             android:text="."
-            android:textColor="@android:color/background_light"
+
             android:textSize="30sp"
             app:layout_constraintStart_toEndOf="@+id/szam0"
             app:layout_constraintTop_toBottomOf="@+id/szam3" />
@@ -185,7 +186,7 @@
             android:layout_marginTop="176dp"
             android:background="@drawable/operation_gradient"
             android:text="/"
-            android:textColor="@android:color/background_light"
+
             android:textSize="30sp"
             app:layout_constraintStart_toEndOf="@+id/memoryminusz"
             app:layout_constraintTop_toTopOf="parent" />
@@ -198,7 +199,7 @@
             android:layout_marginTop="8dp"
             android:background="@drawable/operation_gradient"
             android:text="x"
-            android:textColor="@android:color/background_light"
+
             android:textSize="30sp"
             app:layout_constraintStart_toEndOf="@+id/szam9"
             app:layout_constraintTop_toBottomOf="@+id/osztas" />
@@ -211,7 +212,7 @@
             android:layout_marginTop="8dp"
             android:background="@drawable/operation_gradient"
             android:text="-"
-            android:textColor="@android:color/background_light"
+
             android:textSize="30sp"
             app:layout_constraintStart_toEndOf="@+id/szam6"
             app:layout_constraintTop_toBottomOf="@+id/szorzas" />
@@ -224,7 +225,7 @@
             android:layout_marginTop="8dp"
             android:background="@drawable/operation_gradient"
             android:text="+"
-            android:textColor="@android:color/background_light"
+
             android:textSize="30sp"
             app:layout_constraintStart_toEndOf="@+id/szam3"
             app:layout_constraintTop_toBottomOf="@+id/minusz" />
@@ -238,7 +239,7 @@
             android:layout_marginTop="8dp"
             android:background="@drawable/operation_gradient"
             android:text="="
-            android:textColor="@android:color/background_light"
+
             android:textSize="30sp"
             app:layout_constraintStart_toEndOf="@+id/comma"
             app:layout_constraintTop_toBottomOf="@+id/plussz" />
@@ -252,7 +253,7 @@
             android:layout_marginTop="176dp"
             android:background="@drawable/operation_gradient"
             android:text="AC"
-            android:textColor="@android:color/background_light"
+
             android:textSize="25sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -266,7 +267,7 @@
             android:layout_marginTop="176dp"
             android:background="@drawable/m_gradient"
             android:text="M+"
-            android:textColor="@android:color/background_light"
+
             android:textSize="25sp"
             app:layout_constraintStart_toEndOf="@+id/AC"
             app:layout_constraintTop_toTopOf="parent" />
@@ -280,7 +281,7 @@
             android:layout_marginTop="176dp"
             android:background="@drawable/m_gradient"
             android:text="M-"
-            android:textColor="@android:color/background_light"
+
             android:textSize="25sp"
             app:layout_constraintStart_toEndOf="@+id/memoryplussz"
             app:layout_constraintTop_toTopOf="parent" />

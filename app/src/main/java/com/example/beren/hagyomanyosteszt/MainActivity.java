@@ -40,11 +40,17 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
         {
             case R.id.style_white:
                 getWindow().getDecorView().setBackgroundColor(Color.WHITE);
-
+                for(int i = 0; i < buttons.length; i++)
+                {
+                    buttons[i].setTextColor(Color.BLACK);
+                }
                 return true;
             case R.id.style_black:
                 getWindow().getDecorView().setBackgroundColor(Color.BLACK);
-
+                for(int i = 0; i < buttons.length; i++)
+                {
+                    buttons[i].setTextColor(Color.WHITE);
+                }
                 return true;
                 default:
                     return super.onOptionsItemSelected(item);
