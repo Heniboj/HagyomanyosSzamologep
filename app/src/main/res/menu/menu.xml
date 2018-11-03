@@ -6,6 +6,8 @@
             android:title="feher" />
         <item android:id="@+id/style_black"
             android:title="fekete"/>
+        <item android:id="@+id/intacool"
+            android:title="insta"/>
 
     </group>
 </menu>

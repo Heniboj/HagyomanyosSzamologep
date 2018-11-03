@@ -27,7 +27,7 @@
             android:paddingBottom="5dp"
             android:text="0"
 
-            android:textColor="#32a703"
+            android:textColor="#FF00EF00"
             android:textSize="35sp"
             app:layout_constraintHorizontal_bias="0.352"
             app:layout_constraintLeft_toLeftOf="parent"

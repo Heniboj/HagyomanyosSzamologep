@@ -1,7 +1,10 @@
 package com.example.beren.hagyomanyosteszt;
 
 import android.graphics.Color;
+import android.graphics.drawable.AnimationDrawable;
+import android.graphics.drawable.Drawable;
 import android.support.constraint.ConstraintLayout;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -18,6 +21,8 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
 {
     TextView t1;
     Button buttons [] = new Button[19];
+    ConstraintLayout constraintLayout;
+    AnimationDrawable animationDrawable;
 
     double memory, prevInput, prevResult;
     boolean justOutputted = true;
@@ -44,6 +49,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
                     buttons[i].setTextColor(Color.BLACK);
                 }
                 return true;
+
             case R.id.style_black:
                 getWindow().getDecorView().setBackgroundColor(Color.BLACK);
                 for(int i = 0; i < buttons.length; i++)
@@ -51,6 +57,11 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
                     buttons[i].setTextColor(Color.WHITE);
                 }
                 return true;
+
+            case R.id.intacool:
+                constraintLayout.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.animation_list));
+                return true;
+
                 default:
                     return super.onOptionsItemSelected(item);
         }
@@ -61,7 +72,13 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+/*
+        constraintLayout = (ConstraintLayout) findViewById(R.id.contraintlayout);
+        animationDrawable =(AnimationDrawable)constraintLayout.getBackground();
 
+        animationDrawable.setEnterFadeDuration(2500);
+        animationDrawable.setExitFadeDuration(1000);
+*/
         buttons[0] = findViewById(R.id.szam0);
         buttons[1] = findViewById(R.id.szam1);
         buttons[2] = findViewById(R.id.szam2);
@@ -104,7 +121,14 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
 
         t1 = findViewById(R.id.kijelzo1);
     }
+/*
+    @Override
+    protected void onResume() {
+        super.onResume();
 
+        animationDrawable.start();
+    }
+*/
     public void onClick(View v)
     {
         Button button = (Button) v;
@@ -151,23 +175,31 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
                 break;
 
             case R.id.plussz:
+                //TODO irni fuggvenyt a click_gradient change re (most csak gyoran inmplementaltam)
+                buttons[11].setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.clicked_gradient));
                 DoMath(Operations.Addition);
                 break;
             case R.id.minusz:
+                buttons[12].setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.clicked_gradient));
                 DoMath(Operations.Subtraction);
                 break;
             case R.id.szorzas:
+                buttons[13].setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.clicked_gradient));
                 DoMath(Operations.Multiplication);
                 break;
             case R.id.osztas:
+                buttons[14].setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.clicked_gradient));
                 DoMath(Operations.Division);
                 break;
 
             case R.id.egyenlo:
                 if (prevOp != null)
                 {
-
                     DoMath(Operations.Equal);
+                    buttons[11].setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.operation_gradient));
+                    buttons[12].setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.operation_gradient));
+                    buttons[13].setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.operation_gradient));
+                    buttons[14].setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.operation_gradient));
                 }
                 else
                     Display(Input());
