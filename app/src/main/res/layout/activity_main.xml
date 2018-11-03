@@ -200,7 +200,7 @@
             android:background="@drawable/operation_gradient"
             android:text="x"
 
-            android:textSize="30sp"
+            android:textSize="24sp"
             app:layout_constraintStart_toEndOf="@+id/szam9"
             app:layout_constraintTop_toBottomOf="@+id/osztas" />
 
