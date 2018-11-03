@@ -17,7 +17,6 @@ import java.text.DecimalFormat;
 public class MainActivity extends AppCompatActivity implements OnClickListener
 {
     TextView t1;
-    Button b1,b2,b3,b4,b5,b6,b7,b8,b9,b0,bplussz,bminusz,bszorzas,bosztas,begyenlo,bmemoryplussz,bmemoryminusz,bAC,comma;
     Button buttons [] = new Button[19];
 
     double memory, prevInput, prevResult;
@@ -83,55 +82,6 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
         buttons[17] = findViewById(R.id.memoryminusz);
         buttons[18] = findViewById(R.id.AC);
 
-/*
-        b1 = findViewById(R.id.szam1);
-        b2 = findViewById(R.id.szam2);
-        b3 = findViewById(R.id.szam3);
-        b4 = findViewById(R.id.szam4);
-        b5 = findViewById(R.id.szam5);
-        b6 = findViewById(R.id.szam6);
-        b7 = findViewById(R.id.szam7);
-        b8 = findViewById(R.id.szam8);
-        b9 = findViewById(R.id.szam9);
-        b0 = findViewById(R.id.szam0);
-
-        comma = findViewById(R.id.comma);
-
-        t1 = findViewById(R.id.kijelzo1);
-
-        bplussz = findViewById(R.id.plussz);
-        bminusz = findViewById(R.id.minusz);
-        bszorzas = findViewById(R.id.szorzas);
-        bosztas = findViewById(R.id.osztas);
-
-        begyenlo = findViewById(R.id.egyenlo);
-
-        bmemoryplussz = findViewById(R.id.memoryplussz);
-        bmemoryminusz = findViewById(R.id.memoryminusz);
-
-        bAC = findViewById(R.id.AC);
-        */
-/*
-        b1.setOnClickListener(this);
-        b2.setOnClickListener(this);
-        b3.setOnClickListener(this);
-        b4.setOnClickListener(this);
-        b5.setOnClickListener(this);
-        b6.setOnClickListener(this);
-        b7.setOnClickListener(this);
-        b8.setOnClickListener(this);
-        b9.setOnClickListener(this);
-        b0.setOnClickListener(this);
-        bplussz.setOnClickListener(this);
-        bminusz.setOnClickListener(this);
-        bszorzas.setOnClickListener(this);
-        bosztas.setOnClickListener(this);
-        begyenlo.setOnClickListener(this);
-        bmemoryplussz.setOnClickListener(this);
-        bmemoryminusz.setOnClickListener(this);
-        bAC.setOnClickListener(this);
-        comma.setOnClickListener(this);
-*/
         buttons[0].setOnClickListener(this);
         buttons[1].setOnClickListener(this);
         buttons[2].setOnClickListener(this);
@@ -151,6 +101,8 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
         buttons[16].setOnClickListener(this);
         buttons[17].setOnClickListener(this);
         buttons[18].setOnClickListener(this);
+
+        t1 = findViewById(R.id.kijelzo1);
     }
 
     public void onClick(View v)
@@ -158,10 +110,6 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
         Button button = (Button) v;
 
         int buttonId = button.getId();
-        //TODO megoldani hogy a buttonID mukodjon a buttonarrayjel
-        // lehet jo a switch de lehet jobb a for loop
-        // ha kitalaltatok valamit szoljatok
-        // egyenlore csak kikommenteltem amit valtoztattam mert meg nem mukodik amit akarok
 
         String input = t1.getText().toString();
 
