@@ -175,20 +175,19 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
                 break;
 
             case R.id.plussz:
-                //TODO irni fuggvenyt a click_gradient change re (most csak gyoran inmplementaltam)
-                buttons[11].setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.clicked_gradient));
+                Gradient(11);
                 DoMath(Operations.Addition);
                 break;
             case R.id.minusz:
-                buttons[12].setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.clicked_gradient));
+                Gradient(12);
                 DoMath(Operations.Subtraction);
                 break;
             case R.id.szorzas:
-                buttons[13].setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.clicked_gradient));
+                Gradient(13);
                 DoMath(Operations.Multiplication);
                 break;
             case R.id.osztas:
-                buttons[14].setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.clicked_gradient));
+                Gradient(14);
                 DoMath(Operations.Division);
                 break;
 
@@ -196,10 +195,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
                 if (prevOp != null)
                 {
                     DoMath(Operations.Equal);
-                    buttons[11].setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.operation_gradient));
-                    buttons[12].setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.operation_gradient));
-                    buttons[13].setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.operation_gradient));
-                    buttons[14].setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.operation_gradient));
+                    Gradient();
                 }
                 else
                     Display(Input());
@@ -293,6 +289,18 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
                 break;
         }
         prevOp = op;
+    }
+
+    private void Gradient(int id) {
+        Gradient();
+        buttons[id].setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.clicked_gradient));
+    }
+
+    private void Gradient() {
+        buttons[11].setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.operation_gradient));
+        buttons[12].setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.operation_gradient));
+        buttons[13].setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.operation_gradient));
+        buttons[14].setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.operation_gradient));
     }
 }
 
