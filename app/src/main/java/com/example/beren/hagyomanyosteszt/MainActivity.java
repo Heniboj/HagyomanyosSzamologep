@@ -7,6 +7,7 @@ import android.support.constraint.ConstraintLayout;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -20,13 +21,14 @@ import java.text.DecimalFormat;
 public class MainActivity extends AppCompatActivity implements OnClickListener
 {
     TextView t1;
-    Button buttons [] = new Button[19];
+    Button buttons [] = new Button[23];
     ConstraintLayout constraintLayout;
     AnimationDrawable animationDrawable;
 
-    double memory, prevInput, prevResult;
+    double memory, prevInput, prevResult, ANS;
     boolean justOutputted = true;
     boolean firstInput = true;
+    boolean ANSPressed = false;
     Operations prevOp = null;
 
     @Override
@@ -98,6 +100,10 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
         buttons[16] = findViewById(R.id.memoryplussz);
         buttons[17] = findViewById(R.id.memoryminusz);
         buttons[18] = findViewById(R.id.AC);
+        buttons[19] = findViewById(R.id.releaseMemory);
+        buttons[20] = findViewById(R.id.createMemory);
+        buttons[21] = findViewById(R.id.memory);
+        buttons[22] = findViewById(R.id.ANS);
 
         buttons[0].setOnClickListener(this);
         buttons[1].setOnClickListener(this);
@@ -118,6 +124,10 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
         buttons[16].setOnClickListener(this);
         buttons[17].setOnClickListener(this);
         buttons[18].setOnClickListener(this);
+        buttons[19].setOnClickListener(this);
+        buttons[20].setOnClickListener(this);
+        buttons[21].setOnClickListener(this);
+        buttons[22].setOnClickListener(this);
 
         t1 = findViewById(R.id.kijelzo1);
     }
@@ -137,13 +147,13 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
 
         String input = t1.getText().toString();
 
-        switch(button.getId()){
+        switch(button.getId())
+        {
             case R.id.szam0:
                 if (input.equals("0"))
                     break;
 
             case R.id.comma:
-
                 if (input.contains("."))
                 {
                     StringBuilder sb = new StringBuilder(input);
@@ -171,7 +181,6 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
                     t1.setText(t1.getText() + button.getText().toString());
                     justOutputted = false;
                 }
-
                 break;
 
             case R.id.plussz:
@@ -210,6 +219,30 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
             case R.id.memoryminusz:
                 memory -= Input();
                 break;
+            case R.id.releaseMemory:
+                memory = 0;
+                Log.i("Previuos result", "Released from memory, " + Double.toString(memory));
+                break;
+            case R.id.createMemory:
+                if(ANSPressed)
+                {
+                    Log.i("ANS = ", Double.toString(ANS));
+                    Log.i("ANS saved in memory", Double.toString(ANS));
+                    memory = ANS;
+                }
+                else
+                {
+                    memory = Input();
+                    Log.i("Previous input", "Saved in memory: " + Double.toString(Input()));
+                }
+
+            case R.id.memory:
+                Display(memory);
+                break;
+            case R.id.ANS:
+                ANSPressed = true;
+                Display(ANS);
+                break;
         }
     }
 
@@ -230,7 +263,8 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
         prevResult = x;
     }
 
-    private double Input() {
+    private double Input()
+    {
         String input = t1.getText().toString();
         input = input.replaceAll("[^0-9.]", "");
         if (input.startsWith("."))
@@ -252,7 +286,6 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
 
     private void DoMath(Operations op)
     {
-
         double input = Input();
         if (prevOp == null)
         {
@@ -289,14 +322,17 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
                 break;
         }
         prevOp = op;
+        ANS = prevResult;
     }
 
-    private void Gradient(int id) {
+    private void Gradient(int id)
+    {
         Gradient();
         buttons[id].setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.clicked_gradient));
     }
 
-    private void Gradient() {
+    private void Gradient()
+    {
         buttons[11].setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.operation_gradient));
         buttons[12].setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.operation_gradient));
         buttons[13].setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.operation_gradient));
