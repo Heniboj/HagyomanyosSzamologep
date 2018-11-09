@@ -19,33 +19,31 @@
             android:id="@+id/kijelzo1"
             android:layout_width="360dp"
             android:layout_height="92dp"
+            android:layout_marginLeft="25dp"
             android:layout_marginTop="16dp"
             android:background="@drawable/mygradient"
             android:paddingLeft="20dp"
             android:paddingTop="5dp"
             android:paddingRight="20dp"
             android:paddingBottom="5dp"
-            android:text="0"
 
+            android:text="0"
             android:textColor="#FF00EF00"
             android:textSize="35sp"
-            app:layout_constraintHorizontal_bias="0.352"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
             android:id="@+id/szam7"
             android:layout_width="55dp"
             android:layout_height="50dp"
-            android:layout_marginLeft="16dp"
+            android:layout_marginLeft="55dp"
             android:layout_marginTop="8dp"
             android:background="@drawable/number_gradient"
             android:text="7"
-
             android:textSize="30sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/AC" />
+            app:layout_constraintTop_toBottomOf="@+id/AC" /> // 7
 
         <Button
             android:id="@+id/szam8"
@@ -55,10 +53,9 @@
             android:layout_marginTop="8dp"
             android:background="@drawable/number_gradient"
             android:text="8"
-
             android:textSize="30sp"
             app:layout_constraintStart_toEndOf="@+id/szam7"
-            app:layout_constraintTop_toBottomOf="@+id/memoryplussz" />
+            app:layout_constraintTop_toBottomOf="@+id/memoryplussz" /> // 8
 
         <Button
             android:id="@+id/szam9"
@@ -68,23 +65,21 @@
             android:layout_marginTop="8dp"
             android:background="@drawable/number_gradient"
             android:text="9"
-
             android:textSize="30sp"
             app:layout_constraintStart_toEndOf="@+id/szam8"
-            app:layout_constraintTop_toBottomOf="@+id/memoryminusz" />
+            app:layout_constraintTop_toBottomOf="@+id/memoryminusz" /> // 9
 
         <Button
             android:id="@+id/szam4"
             android:layout_width="55dp"
             android:layout_height="50dp"
-            android:layout_marginLeft="16dp"
+            android:layout_marginLeft="55dp"
             android:layout_marginTop="8dp"
             android:background="@drawable/number_gradient"
             android:text="4"
-
             android:textSize="30sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/szam7" />
+            app:layout_constraintTop_toBottomOf="@+id/szam7" /> // 4
 
         <Button
             android:id="@+id/szam5"
@@ -94,10 +89,9 @@
             android:layout_marginTop="8dp"
             android:background="@drawable/number_gradient"
             android:text="5"
-
             android:textSize="30sp"
             app:layout_constraintStart_toEndOf="@+id/szam4"
-            app:layout_constraintTop_toBottomOf="@+id/szam8" />
+            app:layout_constraintTop_toBottomOf="@+id/szam8" /> // 5
 
         <Button
             android:id="@+id/szam6"
@@ -107,23 +101,21 @@
             android:layout_marginTop="8dp"
             android:background="@drawable/number_gradient"
             android:text="6"
-
             android:textSize="30sp"
             app:layout_constraintStart_toEndOf="@+id/szam5"
-            app:layout_constraintTop_toBottomOf="@+id/szam9" />
+            app:layout_constraintTop_toBottomOf="@+id/szam9" /> // 6
 
         <Button
             android:id="@+id/szam1"
             android:layout_width="55dp"
             android:layout_height="50dp"
-            android:layout_marginLeft="16dp"
+            android:layout_marginLeft="55dp"
             android:layout_marginTop="8dp"
             android:background="@drawable/number_gradient"
             android:text="1"
-
             android:textSize="30sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/szam4" />
+            app:layout_constraintTop_toBottomOf="@+id/szam4" /> // 1
 
         <Button
             android:id="@+id/szam2"
@@ -133,10 +125,9 @@
             android:layout_marginTop="8dp"
             android:background="@drawable/number_gradient"
             android:text="2"
-
             android:textSize="30sp"
             app:layout_constraintStart_toEndOf="@+id/szam1"
-            app:layout_constraintTop_toBottomOf="@+id/szam5" />
+            app:layout_constraintTop_toBottomOf="@+id/szam5" /> // 2
 
         <Button
             android:id="@+id/szam3"
@@ -146,29 +137,26 @@
             android:layout_marginTop="8dp"
             android:background="@drawable/number_gradient"
             android:text="3"
-
             android:textSize="30sp"
             app:layout_constraintStart_toEndOf="@+id/szam2"
-            app:layout_constraintTop_toBottomOf="@+id/szam6" />
+            app:layout_constraintTop_toBottomOf="@+id/szam6" /> // 3
 
         <Button
             android:id="@+id/szam0"
-            android:layout_width="145dp"
-            android:layout_height="60dp"
-            android:layout_marginLeft="16dp"
+            android:layout_width="126dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="55dp"
             android:layout_marginTop="8dp"
             android:background="@drawable/number_gradient"
             android:text="0"
-
             android:textSize="30sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/szam2" />
+            app:layout_constraintTop_toBottomOf="@+id/szam2" /> // 0
 
         <Button
             android:id="@+id/comma"
             android:layout_width="55dp"
             android:layout_height="50dp"
-            android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="8dp"
             android:background="@drawable/number_gradient"
@@ -176,168 +164,151 @@
             android:text="."
             android:textSize="30sp"
             app:layout_constraintStart_toEndOf="@+id/szam0"
-            app:layout_constraintTop_toBottomOf="@+id/szam3" />
+            app:layout_constraintTop_toBottomOf="@+id/szam3" /> // .
 
         <Button
             android:id="@+id/osztas"
-            android:layout_width="90dp"
-            android:layout_height="60dp"
-            android:layout_marginStart="16dp"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
             android:layout_marginLeft="16dp"
-            android:layout_marginTop="176dp"
+            android:layout_marginTop="140dp"
             android:background="@drawable/operation_gradient"
             android:text="/"
-
             android:textSize="30sp"
             app:layout_constraintStart_toEndOf="@+id/memoryminusz"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent" /> // /
 
         <Button
             android:id="@+id/szorzas"
-            android:layout_width="90dp"
-            android:layout_height="60dp"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="8dp"
             android:background="@drawable/operation_gradient"
             android:text="x"
-
             android:textSize="24sp"
             app:layout_constraintStart_toEndOf="@+id/szam9"
-            app:layout_constraintTop_toBottomOf="@+id/osztas" />
+            app:layout_constraintTop_toBottomOf="@+id/osztas" /> // *
 
         <Button
             android:id="@+id/minusz"
-            android:layout_width="90dp"
-            android:layout_height="60dp"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="8dp"
             android:background="@drawable/operation_gradient"
             android:text="-"
-
             android:textSize="30sp"
             app:layout_constraintStart_toEndOf="@+id/szam6"
-            app:layout_constraintTop_toBottomOf="@+id/szorzas" />
+            app:layout_constraintTop_toBottomOf="@+id/szorzas" /> -
 
         <Button
             android:id="@+id/plussz"
-            android:layout_width="90dp"
-            android:layout_height="60dp"
-            android:layout_marginLeft="16dp"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
             android:layout_marginTop="8dp"
+            android:layout_marginLeft="16dp"
             android:background="@drawable/operation_gradient"
             android:text="+"
-
             android:textSize="30sp"
             app:layout_constraintStart_toEndOf="@+id/szam3"
-            app:layout_constraintTop_toBottomOf="@+id/minusz" />
+            app:layout_constraintTop_toBottomOf="@+id/minusz" /> // +
 
         <Button
             android:id="@+id/egyenlo"
-            android:layout_width="90dp"
-            android:layout_height="60dp"
-            android:layout_marginStart="16dp"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
             android:layout_marginLeft="16dp"
-
             android:layout_marginTop="8dp"
             android:background="@drawable/operation_gradient"
             android:text="="
             android:textSize="30sp"
             app:layout_constraintStart_toEndOf="@+id/comma"
-            app:layout_constraintTop_toBottomOf="@+id/plussz" />
+            app:layout_constraintTop_toBottomOf="@+id/plussz" /> // =
 
         <Button
             android:id="@+id/AC"
             android:layout_width="55dp"
             android:layout_height="50dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="176dp"
+            android:layout_marginLeft="55dp"
+            android:layout_marginTop="140dp"
             android:background="@drawable/operation_gradient"
             android:text="AC"
-
             android:textSize="25sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent" /> // AC
 
         <Button
             android:id="@+id/memoryplussz"
             android:layout_width="55dp"
             android:layout_height="50dp"
-            android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
-            android:layout_marginTop="176dp"
+            android:layout_marginTop="140dp"
             android:background="@drawable/m_gradient"
             android:text="M+"
-
             android:textSize="25sp"
             app:layout_constraintStart_toEndOf="@+id/AC"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent" /> // M+
 
         <Button
             android:id="@+id/memoryminusz"
             android:layout_width="55dp"
             android:layout_height="50dp"
-            android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
-            android:layout_marginTop="176dp"
+            android:layout_marginTop="140dp"
             android:background="@drawable/m_gradient"
             android:text="M-"
-
             android:textSize="25sp"
             app:layout_constraintStart_toEndOf="@+id/memoryplussz"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent" /> // M-
 
         <Button
             android:id="@+id/releaseMemory"
             android:layout_width="55dp"
             android:layout_height="50dp"
-            android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="8dp"
             android:background="@drawable/m_gradient"
             android:text="RM"
             android:textSize="24sp"
             app:layout_constraintStart_toEndOf="@+id/memory"
-            app:layout_constraintTop_toBottomOf="@+id/comma" />
+            app:layout_constraintTop_toBottomOf="@+id/comma" /> // RM
 
         <Button
             android:id="@+id/createMemory"
-            android:layout_width="90dp"
-            android:layout_height="60dp"
-            android:layout_marginStart="16dp"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="8dp"
             android:background="@drawable/m_gradient"
             android:text="CM"
             android:textSize="24sp"
             app:layout_constraintStart_toEndOf="@+id/releaseMemory"
-            app:layout_constraintTop_toBottomOf="@+id/egyenlo" />
+            app:layout_constraintTop_toBottomOf="@+id/egyenlo" /> // CM
 
         <Button
             android:id="@+id/memory"
-            android:layout_width="145dp"
-            android:layout_height="60dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
+            android:layout_width="126dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="55dp"
             android:layout_marginTop="8dp"
             android:background="@drawable/m_gradient"
             android:text="M"
             android:textSize="30sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/szam0" />
+            app:layout_constraintTop_toBottomOf="@+id/szam0" /> // M
 
         <Button
             android:id="@+id/ANS"
-            android:layout_width="332dp"
-            android:layout_height="60dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
+            android:layout_width="293dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="55dp"
             android:layout_marginTop="8dp"
+            android:background="@drawable/clicked_gradient"
             android:text="ANS"
             android:textSize="30sp"
             app:layout_constraintStart_toStartOf="parent"
-            android:background="@drawable/clicked_gradient"
-            app:layout_constraintTop_toBottomOf="@+id/memory" />
+            app:layout_constraintTop_toBottomOf="@+id/memory" /> // ANS
 
     </android.support.constraint.ConstraintLayout>
 

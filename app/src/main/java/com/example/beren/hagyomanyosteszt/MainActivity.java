@@ -2,7 +2,6 @@ package com.example.beren.hagyomanyosteszt;
 
 import android.graphics.Color;
 import android.graphics.drawable.AnimationDrawable;
-import android.graphics.drawable.Drawable;
 import android.support.constraint.ConstraintLayout;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -77,7 +76,6 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
 /*
         constraintLayout = (ConstraintLayout) findViewById(R.id.contraintlayout);
         animationDrawable =(AnimationDrawable)constraintLayout.getBackground();
-
         animationDrawable.setEnterFadeDuration(2500);
         animationDrawable.setExitFadeDuration(1000);
 */
@@ -130,12 +128,21 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
         buttons[22].setOnClickListener(this);
 
         t1 = findViewById(R.id.kijelzo1);
+
+        if(getResources().getDisplayMetrics().widthPixels>getResources().getDisplayMetrics().
+                heightPixels)
+        {
+            setContentView(R.layout.rotated_activity_main); // it will use xml from /res/layout-land
+        }
+        else
+        {
+            setContentView(R.layout.activity_main); // it will use .xml from /res/layout
+        }
     }
 /*
     @Override
     protected void onResume() {
         super.onResume();
-
         animationDrawable.start();
     }
 */
