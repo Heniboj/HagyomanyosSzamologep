@@ -129,6 +129,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
 
         t1 = findViewById(R.id.kijelzo1);
 
+        /*
         if(getResources().getDisplayMetrics().widthPixels>getResources().getDisplayMetrics().
                 heightPixels)
         {
@@ -138,6 +139,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
         {
             setContentView(R.layout.activity_main); // it will use .xml from /res/layout
         }
+        */
     }
 /*
     @Override
