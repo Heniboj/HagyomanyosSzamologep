@@ -34,9 +34,9 @@
 
         <Button
             android:id="@+id/szam7"
-            android:layout_width="65dp"
-            android:layout_height="60dp"
-            android:layout_marginLeft="40dp"
+            android:layout_width="80dp"
+            android:layout_height="70dp"
+            android:layout_marginLeft="10dp"
             android:layout_marginTop="8dp"
             android:background="@drawable/number_gradient"
             android:text="7"
@@ -46,8 +46,8 @@
 
         <Button
             android:id="@+id/szam8"
-            android:layout_width="65dp"
-            android:layout_height="60dp"
+            android:layout_width="80dp"
+            android:layout_height="70dp"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="8dp"
             android:background="@drawable/number_gradient"
@@ -58,8 +58,8 @@
 
         <Button
             android:id="@+id/szam9"
-            android:layout_width="65dp"
-            android:layout_height="60dp"
+            android:layout_width="80dp"
+            android:layout_height="70dp"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="8dp"
             android:background="@drawable/number_gradient"
@@ -70,9 +70,9 @@
 
         <Button
             android:id="@+id/szam4"
-            android:layout_width="65dp"
-            android:layout_height="60dp"
-            android:layout_marginLeft="40dp"
+            android:layout_width="80dp"
+            android:layout_height="70dp"
+            android:layout_marginLeft="10dp"
             android:layout_marginTop="8dp"
             android:background="@drawable/number_gradient"
             android:text="4"
@@ -82,8 +82,8 @@
 
         <Button
             android:id="@+id/szam5"
-            android:layout_width="65dp"
-            android:layout_height="60dp"
+            android:layout_width="80dp"
+            android:layout_height="70dp"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="8dp"
             android:background="@drawable/number_gradient"
@@ -94,8 +94,8 @@
 
         <Button
             android:id="@+id/szam6"
-            android:layout_width="65dp"
-            android:layout_height="60dp"
+            android:layout_width="80dp"
+            android:layout_height="70dp"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="8dp"
             android:background="@drawable/number_gradient"
@@ -106,9 +106,9 @@
 
         <Button
             android:id="@+id/szam1"
-            android:layout_width="65dp"
-            android:layout_height="60dp"
-            android:layout_marginLeft="40dp"
+            android:layout_width="80dp"
+            android:layout_height="70dp"
+            android:layout_marginLeft="10dp"
             android:layout_marginTop="8dp"
             android:background="@drawable/number_gradient"
             android:text="1"
@@ -118,8 +118,8 @@
 
         <Button
             android:id="@+id/szam2"
-            android:layout_width="65dp"
-            android:layout_height="60dp"
+            android:layout_width="80dp"
+            android:layout_height="70dp"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="8dp"
             android:background="@drawable/number_gradient"
@@ -130,8 +130,8 @@
 
         <Button
             android:id="@+id/szam3"
-            android:layout_width="65dp"
-            android:layout_height="60dp"
+            android:layout_width="80dp"
+            android:layout_height="70dp"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="8dp"
             android:background="@drawable/number_gradient"
@@ -142,9 +142,9 @@
 
         <Button
             android:id="@+id/szam0"
-            android:layout_width="145dp"
-            android:layout_height="60dp"
-            android:layout_marginLeft="40dp"
+            android:layout_width="175dp"
+            android:layout_height="70dp"
+            android:layout_marginLeft="10dp"
             android:layout_marginTop="8dp"
             android:background="@drawable/number_gradient"
             android:text="0"
@@ -154,8 +154,8 @@
 
         <Button
             android:id="@+id/comma"
-            android:layout_width="65dp"
-            android:layout_height="60dp"
+            android:layout_width="80dp"
+            android:layout_height="70dp"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="8dp"
             android:background="@drawable/number_gradient"
@@ -167,9 +167,9 @@
         <Button
             android:id="@+id/osztas"
             android:layout_width="90dp"
-            android:layout_height="60dp"
+            android:layout_height="70dp"
             android:layout_marginLeft="16dp"
-            android:layout_marginTop="176dp"
+            android:layout_marginTop="130dp"
             android:background="@drawable/operation_gradient"
             android:text="/"
             android:textSize="30sp"
@@ -179,7 +179,7 @@
         <Button
             android:id="@+id/szorzas"
             android:layout_width="90dp"
-            android:layout_height="60dp"
+            android:layout_height="70dp"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="8dp"
             android:background="@drawable/operation_gradient"
@@ -191,7 +191,7 @@
         <Button
             android:id="@+id/minusz"
             android:layout_width="90dp"
-            android:layout_height="60dp"
+            android:layout_height="70dp"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="8dp"
             android:background="@drawable/operation_gradient"
@@ -203,7 +203,7 @@
         <Button
             android:id="@+id/plussz"
             android:layout_width="90dp"
-            android:layout_height="60dp"
+            android:layout_height="70dp"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="8dp"
             android:background="@drawable/operation_gradient"
@@ -215,7 +215,7 @@
         <Button
             android:id="@+id/egyenlo"
             android:layout_width="90dp"
-            android:layout_height="60dp"
+            android:layout_height="70dp"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="8dp"
             android:background="@drawable/operation_gradient"
@@ -226,10 +226,10 @@
 
         <Button
             android:id="@+id/AC"
-            android:layout_width="65dp"
-            android:layout_height="60dp"
-            android:layout_marginLeft="40dp"
-            android:layout_marginTop="176dp"
+            android:layout_width="80dp"
+            android:layout_height="70dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="130dp"
             android:background="@drawable/operation_gradient"
             android:text="AC"
             android:textSize="25sp"
@@ -238,10 +238,10 @@
 
         <Button
             android:id="@+id/memoryplussz"
-            android:layout_width="65dp"
-            android:layout_height="60dp"
+            android:layout_width="80dp"
+            android:layout_height="70dp"
             android:layout_marginLeft="16dp"
-            android:layout_marginTop="176dp"
+            android:layout_marginTop="130dp"
             android:background="@drawable/m_gradient"
             android:text="M+"
             android:textSize="25sp"
@@ -250,10 +250,10 @@
 
         <Button
             android:id="@+id/memoryminusz"
-            android:layout_width="65dp"
-            android:layout_height="60dp"
+            android:layout_width="80dp"
+            android:layout_height="70dp"
             android:layout_marginLeft="16dp"
-            android:layout_marginTop="176dp"
+            android:layout_marginTop="130dp"
             android:background="@drawable/m_gradient"
             android:text="M-"
 
@@ -263,8 +263,8 @@
 
         <Button
             android:id="@+id/releaseMemory"
-            android:layout_width="65dp"
-            android:layout_height="60dp"
+            android:layout_width="80dp"
+            android:layout_height="70dp"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="8dp"
             android:background="@drawable/m_gradient"
@@ -276,7 +276,7 @@
         <Button
             android:id="@+id/createMemory"
             android:layout_width="90dp"
-            android:layout_height="60dp"
+            android:layout_height="70dp"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="8dp"
             android:background="@drawable/m_gradient"
@@ -287,9 +287,9 @@
 
         <Button
             android:id="@+id/memory"
-            android:layout_width="145dp"
-            android:layout_height="60dp"
-            android:layout_marginLeft="40dp"
+            android:layout_width="175dp"
+            android:layout_height="70dp"
+            android:layout_marginLeft="10dp"
             android:layout_marginTop="8dp"
             android:background="@drawable/m_gradient"
             android:text="M"
@@ -299,10 +299,11 @@
 
         <Button
             android:id="@+id/ANS"
-            android:layout_width="332dp"
-            android:layout_height="60dp"
-            android:layout_marginLeft="40dp"
-            android:layout_marginTop="8dp"
+            android:layout_width="375dp"
+            android:layout_height="70dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="16dp"
             android:background="@drawable/clicked_gradient"
             android:text="ANS"
             android:textSize="30sp"

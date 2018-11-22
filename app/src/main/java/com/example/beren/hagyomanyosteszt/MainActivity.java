@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.s7edge_main_activity);
+        setContentView(R.layout.activity_main);
 /*
         constraintLayout = (ConstraintLayout) findViewById(R.id.contraintlayout);
         animationDrawable =(AnimationDrawable)constraintLayout.getBackground();
@@ -156,7 +156,6 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
 */
     public void onClick(View v)
     {
-        setBlack();
         Button button = (Button) v;
 
         int buttonId = button.getId();
@@ -353,15 +352,6 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
         buttons[12].setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.operation_gradient));
         buttons[13].setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.operation_gradient));
         buttons[14].setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.operation_gradient));
-    }
-
-    void setBlack()
-    {
-        getWindow().getDecorView().setBackgroundColor(Color.BLACK);
-        for(int i = 0; i < buttons.length; i++)
-        {
-            buttons[i].setTextColor(Color.WHITE);
-        }
     }
 }
 
