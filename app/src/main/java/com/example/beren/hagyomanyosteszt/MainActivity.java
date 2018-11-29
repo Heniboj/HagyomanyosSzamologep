@@ -59,10 +59,6 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
                 }
                 return true;
 
-            case R.id.intacool:
-                constraintLayout.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.animation_list));
-                return true;
-
                 default:
                     return super.onOptionsItemSelected(item);
         }
